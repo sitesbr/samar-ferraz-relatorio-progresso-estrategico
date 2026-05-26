@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+<title>ArquiteturaB2B — Relatório Executivo de Progresso Estratégico | Professora Samar Ferraz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --graphite: #0E1116;
+    --graphite-2: #151922;
+    --graphite-3: #202632;
+    --offwhite: #F6F6F4;
+    --paper: #FFFFFF;
+    --warm-gray: #A9A6A0;
+    --muted: #6F716D;
+    --petrol: #0D384C;
+    --bronze: #B88648;
+    --bronze-2: #C99A59;
+    --bronze-soft: rgba(184, 134, 72, .13);
+    --bronze-line: rgba(184, 134, 72, .28);
+    --line: rgba(14, 17, 22, .10);
+    --line-dark: rgba(246, 246, 244, .12);
+    --danger: #9B3D33;
+    --warning: #A76C2D;
+    --ok: #2E6E54;
+    --shadow: 0 22px 70px rgba(14, 17, 22, .08);
+    --radius: 18px;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', Arial, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background:
+      radial-gradient(circle at top left, rgba(184,134,72,.08), transparent 34rem),
+      linear-gradient(180deg, #F9F8F5 0%, var(--offwhite) 48%, #F1F0EC 100%);
+    color: var(--graphite);
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .report-shell {
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    background: var(--offwhite);
+    box-shadow: 0 0 0 1px rgba(14,17,22,.05), var(--shadow);
+  }
+
+  .container {
+    width: min(100% - 48px, 1020px);
+    margin: 0 auto;
+  }
+
+  .section {
+    position: relative;
+    padding: clamp(56px, 7vw, 92px) 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section.compact { padding: clamp(40px, 6vw, 64px) 0; }
+  .section.dark {
+    background: var(--graphite);
+    color: var(--offwhite);
+    border-bottom-color: var(--line-dark);
+  }
+
+  .section.kraft {
+    background: #F0EEE8;
+  }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+    gap: clamp(24px, 4vw, 64px);
+    align-items: end;
+    margin-bottom: clamp(32px, 5vw, 52px);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--bronze);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 34px;
+    height: 1px;
+    background: currentColor;
+    opacity: .8;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    letter-spacing: -.015em;
+    line-height: .98;
+  }
+
+  h1 {
+    font-size: clamp(54px, 9vw, 104px);
+    font-weight: 500;
+    max-width: 780px;
+    color: var(--offwhite);
+  }
+
+  h2 {
+    font-size: clamp(36px, 5.2vw, 64px);
+    font-weight: 500;
+    color: var(--graphite);
+  }
+
+  .dark h2 { color: var(--offwhite); }
+
+  h3 {
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 500;
+  }
+
+  .lead {
+    color: rgba(14,17,22,.65);
+    font-size: clamp(15px, 1.8vw, 18px);
+    max-width: 680px;
+    font-weight: 300;
+  }
+
+  .dark .lead { color: rgba(246,246,244,.62); }
+
+  .micro {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .dark .micro { color: rgba(246,246,244,.52); }
+
+  /* Brand signature */
+  .brand-signature {
+    display: inline-grid;
+    grid-template-columns: 54px auto;
+    gap: 18px;
+    align-items: center;
+    min-width: 280px;
+  }
+
+  .brand-mark {
+    width: 54px;
+    height: 54px;
+    color: var(--offwhite);
+    display: block;
+  }
+
+  .brand-mark .bronze { stroke: var(--bronze); fill: var(--bronze); }
+  .brand-mark .light { stroke: currentColor; }
+
+  .brand-word {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .brand-name {
+    color: var(--offwhite);
+    font-size: 18px;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .brand-tagline {
+    color: rgba(246,246,244,.56);
+    font-size: 10px;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .brand-on-light .brand-mark { color: var(--graphite); }
+  .brand-on-light .brand-name { color: var(--graphite); }
+  .brand-on-light .brand-tagline { color: var(--muted); }
+
+  /* Cover */
+  .cover {
+    min-height: 920px;
+    background:
+      linear-gradient(90deg, rgba(246,246,244,.045) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(246,246,244,.035) 1px, transparent 1px),
+      radial-gradient(circle at 88% 18%, rgba(184,134,72,.16), transparent 25rem),
+      radial-gradient(circle at 8% 92%, rgba(13,56,76,.48), transparent 34rem),
+      linear-gradient(135deg, #0A0D11 0%, var(--graphite) 56%, #161B22 100%);
+    background-size: 72px 72px, 72px 72px, auto, auto, auto;
+    position: relative;
+    overflow: hidden;
+    color: var(--offwhite);
+  }
+
+  .cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(120deg, transparent 0 58%, rgba(184,134,72,.18) 58.05%, transparent 58.25%),
+      linear-gradient(120deg, transparent 0 66%, rgba(184,134,72,.12) 66.05%, transparent 66.18%);
+    opacity: .72;
+    pointer-events: none;
+  }
+
+  .cover::after {
+    content: "";
+    position: absolute;
+    right: clamp(-80px, -6vw, -20px);
+    top: clamp(110px, 16vw, 190px);
+    width: clamp(240px, 30vw, 410px);
+    height: clamp(240px, 30vw, 410px);
+    border: 1px solid rgba(184,134,72,.20);
+    border-radius: 50%;
+    box-shadow:
+      -74px 74px 0 -73px rgba(246,246,244,.28),
+      -132px 132px 0 -131px rgba(246,246,244,.14);
+    pointer-events: none;
+  }
+
+  .cover-inner {
+    position: relative;
+    z-index: 1;
+    min-height: 920px;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(40px, 6vw, 76px) 0;
+  }
+
+  .cover-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: auto;
+  }
+
+  .confidential-seal {
+    border: 1px solid rgba(184,134,72,.44);
+    color: rgba(246,246,244,.78);
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .cover-center {
+    padding: clamp(80px, 11vw, 150px) 0 56px;
+  }
+
+  .cover-kicker {
+    color: var(--bronze-2);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .cover-subtitle {
+    max-width: 720px;
+    margin-top: 28px;
+    color: rgba(246,246,244,.78);
+    font-size: clamp(18px, 2.4vw, 26px);
+    font-weight: 300;
+    line-height: 1.45;
+  }
+
+  .cover-client {
+    margin-top: 54px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(246,246,244,.12);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(246,246,244,.13);
+  }
+
+  .cover-meta {
+    background: rgba(14,17,22,.68);
+    padding: 24px 22px;
+    min-height: 112px;
+  }
+
+  .cover-meta span {
+    display: block;
+    color: rgba(246,246,244,.42);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .cover-meta strong {
+    display: block;
+    color: rgba(246,246,244,.92);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  .cover-bottom {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: auto;
+    padding-top: 42px;
+    border-top: 1px solid rgba(246,246,244,.10);
+  }
+
+  .doc-code {
+    color: rgba(246,246,244,.38);
+    font-size: 10px;
+    letter-spacing: .19em;
+    text-transform: uppercase;
+  }
+
+  /* Score executive */
+  .score-layout {
+    display: grid;
+    grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 64px);
+    align-items: stretch;
+  }
+
+  .score-panel {
+    border: 1px solid var(--bronze-line);
+    background:
+      radial-gradient(circle at 62% 26%, rgba(184,134,72,.16), transparent 12rem),
+      var(--graphite);
+    color: var(--offwhite);
+    border-radius: var(--radius);
+    padding: 34px;
+    min-height: 360px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .score-panel::after {
+    content: "";
+    position: absolute;
+    inset: 26px;
+    border: 1px solid rgba(246,246,244,.08);
+    pointer-events: none;
+  }
+
+  .score-label {
+    color: var(--bronze-2);
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 26px;
+  }
+
+  .score-disc {
+    width: 196px;
+    height: 196px;
+    margin: 0 auto 28px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    background:
+      conic-gradient(var(--bronze) 0 58%, rgba(246,246,244,.10) 58% 100%);
+  }
+
+  .score-disc::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border-radius: 50%;
+    background: var(--graphite);
+    box-shadow: inset 0 0 0 1px rgba(246,246,244,.10);
+  }
+
+  .score-disc strong {
+    position: relative;
+    z-index: 1;
+    font-family: var(--serif);
+    font-size: 78px;
+    font-weight: 500;
+    color: var(--offwhite);
+    line-height: .8;
+  }
+
+  .score-disc span {
+    position: relative;
+    z-index: 1;
+    color: rgba(246,246,244,.50);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  .score-meta-grid {
+    display: grid;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .score-meta-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 11px 0;
+    border-top: 1px solid rgba(246,246,244,.10);
+  }
+
+  .score-meta-item span {
+    color: rgba(246,246,244,.48);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .score-meta-item strong {
+    color: var(--offwhite);
+    font-size: 13px;
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .executive-card {
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.72);
+    border-radius: var(--radius);
+    padding: clamp(26px, 4vw, 42px);
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+  }
+
+  .statement {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.2vw, 44px);
+    line-height: 1.08;
+    color: var(--graphite);
+    margin-bottom: 24px;
+  }
+
+  .statement em {
+    color: var(--bronze);
+    font-style: normal;
+  }
+
+  .executive-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-top: 30px;
+  }
+
+  .executive-item {
+    background: var(--offwhite);
+    padding: 22px;
+  }
+
+  .executive-item small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .executive-item strong {
+    display: block;
+    font-size: 17px;
+    color: var(--graphite);
+    line-height: 1.3;
+  }
+
+  .note-box {
+    margin-top: 24px;
+    border-left: 2px solid var(--bronze);
+    background: var(--bronze-soft);
+    padding: 18px 20px;
+    color: rgba(14,17,22,.70);
+    font-size: 13px;
+  }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    gap: 18px;
+  }
+
+  .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  .card {
+    background: rgba(255,255,255,.74);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card.dark-card {
+    background: rgba(246,246,244,.045);
+    border-color: rgba(246,246,244,.12);
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 26px;
+    right: 26px;
+    height: 1px;
+    background: var(--bronze-line);
+    opacity: .65;
+  }
+
+  .card-number {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--bronze-line);
+    display: inline-grid;
+    place-items: center;
+    color: var(--bronze);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+
+  .card h3,
+  .card h4 {
+    font-family: var(--serif);
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 14px;
+    color: var(--graphite);
+  }
+
+  .dark .card h3,
+  .dark .card h4 { color: var(--offwhite); }
+
+  .card p,
+  .card li {
+    color: rgba(14,17,22,.66);
+    font-size: 14px;
+  }
+
+  .dark .card p,
+  .dark .card li { color: rgba(246,246,244,.62); }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--bronze-line);
+    color: var(--bronze);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .pill.danger { border-color: rgba(155,61,51,.32); color: var(--danger); background: rgba(155,61,51,.06); }
+  .pill.warning { border-color: rgba(167,108,45,.34); color: var(--warning); background: rgba(167,108,45,.08); }
+  .pill.medium { border-color: rgba(13,56,76,.25); color: var(--petrol); background: rgba(13,56,76,.07); }
+  .dark .pill.medium { color: #8FB4C3; border-color: rgba(143,180,195,.35); background: rgba(143,180,195,.08); }
+
+  /* Pillar breakdown */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .pillar-card {
+    background: rgba(255,255,255,.78);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .pillar-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 18px;
+  }
+
+  .pillar-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 500;
+    color: var(--graphite);
+  }
+
+  .pillar-score {
+    min-width: 66px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--bronze-line);
+    background: var(--bronze-soft);
+    color: var(--graphite);
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .bar {
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(14,17,22,.09);
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .bar span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--bronze);
+  }
+
+  .bar.danger span { background: var(--danger); }
+  .bar.warning span { background: var(--warning); }
+  .bar.ok span { background: var(--ok); }
+  .bar.petrol span { background: var(--petrol); }
+
+  .pillar-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .status-chip {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 9px;
+    color: rgba(14,17,22,.62);
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .status-chip.priority { color: var(--bronze); border-color: var(--bronze-line); background: var(--bronze-soft); }
+
+  /* Table */
+  .table-wrap {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: auto;
+    background: rgba(255,255,255,.72);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+  }
+
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 18px;
+    font-size: 13px;
+  }
+
+  th {
+    color: var(--bronze);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: rgba(184,134,72,.08);
+  }
+
+  tr:last-child td { border-bottom: 0; }
+  td strong { display: block; color: var(--graphite); font-size: 14px; margin-bottom: 5px; }
+  td .sub { color: var(--muted); font-size: 12px; }
+  .validated { color: var(--ok); font-weight: 700; }
+  .not-validated { color: var(--muted); font-weight: 600; }
+
+  /* Lists */
+  .clean-list {
+    display: grid;
+    gap: 12px;
+    list-style: none;
+  }
+
+  .clean-list li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .list-marker {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--bronze-line);
+    color: var(--bronze);
+    display: grid;
+    place-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .timeline-card {
+    background: rgba(255,255,255,.75);
+    padding: 30px;
+  }
+
+  .timeline-card h3 {
+    font-size: 32px;
+    margin-bottom: 6px;
+  }
+
+  .timeline-card .time {
+    color: var(--bronze);
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  /* Existing signal bars */
+  .activation-grid {
+    display: grid;
+    gap: 18px;
+  }
+
+  .signal-row {
+    display: grid;
+    grid-template-columns: minmax(160px, 270px) minmax(0, 1fr) 70px;
+    gap: 18px;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(246,246,244,.10);
+  }
+
+  .signal-row:last-child { border-bottom: 0; }
+
+  .signal-name {
+    color: rgba(246,246,244,.70);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .signal-track {
+    height: 7px;
+    border-radius: 999px;
+    background: rgba(246,246,244,.10);
+    overflow: hidden;
+  }
+
+  .signal-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: var(--bronze);
+  }
+
+  .signal-pct {
+    text-align: right;
+    color: rgba(246,246,244,.58);
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  /* Methodology */
+  .method-box {
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 44px;
+    background: var(--graphite);
+    color: var(--offwhite);
+    border-radius: 20px;
+    padding: clamp(30px, 5vw, 52px);
+    border: 1px solid var(--bronze-line);
+  }
+
+  .method-box h2 { color: var(--offwhite); }
+  .method-box .lead { color: rgba(246,246,244,.62); }
+  .method-list {
+    display: grid;
+    gap: 14px;
+    list-style: none;
+  }
+
+  .method-list li {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(246,246,244,.10);
+    color: rgba(246,246,244,.68);
+    font-size: 14px;
+  }
+
+  .method-list li:last-child { border-bottom: 0; }
+  .method-list strong { color: var(--offwhite); font-weight: 600; }
+
+  /* CTA / Footer */
+  .closing {
+    background:
+      linear-gradient(90deg, rgba(246,246,244,.040) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(246,246,244,.032) 1px, transparent 1px),
+      linear-gradient(135deg, var(--graphite) 0%, #111720 100%);
+    background-size: 76px 76px, 76px 76px, auto;
+    color: var(--offwhite);
+    padding: clamp(70px, 9vw, 118px) 0;
+  }
+
+  .closing h2 {
+    color: var(--offwhite);
+    max-width: 690px;
+    margin-bottom: 24px;
+  }
+
+  .closing .lead { color: rgba(246,246,244,.62); }
+
+  .closing-actions {
+    margin-top: 42px;
+    display: grid;
+    gap: 14px;
+    max-width: 760px;
+  }
+
+  .closing-action {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 16px;
+    align-items: start;
+    border-top: 1px solid rgba(246,246,244,.10);
+    padding-top: 18px;
+  }
+
+  .closing-action span:first-child {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(184,134,72,.48);
+    color: var(--bronze-2);
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .closing-action strong {
+    color: var(--offwhite);
+    font-weight: 600;
+  }
+
+  .closing-action p {
+    color: rgba(246,246,244,.62);
+    font-size: 14px;
+  }
+
+  .footer {
+    background: var(--graphite);
+    color: rgba(246,246,244,.42);
+    border-top: 1px solid rgba(246,246,244,.10);
+    padding: 26px 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .footer-inner strong {
+    color: var(--bronze-2);
+    font-weight: 600;
+  }
+
+  .print-break { break-before: page; }
+
+  @media (max-width: 900px) {
+    .cover,
+    .cover-inner { min-height: auto; }
+    .cover-client,
+    .score-layout,
+    .section-header,
+    .method-box,
+    .timeline-grid {
+      grid-template-columns: 1fr;
+    }
+    .cover-client { background: transparent; gap: 10px; }
+    .cover-meta { border: 1px solid rgba(246,246,244,.12); }
+    .pillar-grid,
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .executive-grid {
+      grid-template-columns: 1fr;
+    }
+    .signal-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .signal-pct { text-align: left; }
+  }
+
+  @media (max-width: 640px) {
+    .container { width: min(100% - 28px, 1020px); }
+    .brand-signature {
+      min-width: 0;
+      grid-template-columns: 42px auto;
+      gap: 12px;
+    }
+    .brand-mark { width: 42px; height: 42px; }
+    .brand-name { font-size: 13px; letter-spacing: .22em; }
+    .brand-tagline { font-size: 8px; letter-spacing: .22em; }
+    .cover-top,
+    .cover-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .confidential-seal { white-space: normal; }
+    .cover-center { padding: 78px 0 42px; }
+    .score-panel { padding: 28px 22px; }
+    .score-disc { width: 166px; height: 166px; }
+    .score-disc strong { font-size: 62px; }
+    .card, .pillar-card, .timeline-card { padding: 22px; }
+    .footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media print {
+    @page { size: A4; margin: 12mm; }
+
+    body {
+      background: #fff !important;
+      font-size: 12px;
+      color: var(--graphite);
+    }
+
+    .report-shell {
+      width: 100%;
+      box-shadow: none;
+      background: #fff;
+    }
+
+    .container { width: 100%; }
+
+    .cover {
+      min-height: 270mm;
+      page-break-after: always;
+    }
+
+    .cover-inner { min-height: 270mm; }
+
+    .section,
+    .closing {
+      padding: 22mm 0;
+    }
+
+    .card,
+    .pillar-card,
+    .timeline-card,
+    .score-panel,
+    .executive-card,
+    .method-box,
+    .table-wrap {
+      break-inside: avoid;
+    }
+
+    .section.dark,
+    .cover,
+    .closing,
+    .footer,
+    .method-box {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    h1 { font-size: 72px; }
+    h2 { font-size: 42px; }
+
+    .table-wrap { overflow: visible; }
+    table { min-width: 0; }
+    th, td { padding: 10px; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+  <main class="report-shell">
+
+    <!-- CAPA -->
+    <section class="cover" aria-label="Capa do relatório">
+      <div class="container cover-inner">
+        <div class="cover-top">
+          <div class="brand-signature">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+              <path class="light" d="M9 54 L31 9 L55 54" fill="none" stroke-width="3.2" stroke-linecap="square"/>
+              <path class="light" d="M21 54 L39 18" fill="none" stroke-width="3.2" stroke-linecap="square"/>
+              <path class="bronze" d="M35 38 H50" fill="none" stroke-width="3.2" stroke-linecap="square"/>
+              <rect class="bronze" x="38" y="49" width="6" height="6"/>
+            </svg>
+            <div class="brand-word">
+              <span class="brand-name">Arquitetura B2B</span>
+              <span class="brand-tagline">Clareza antes da execução.</span>
+            </div>
+          </div>
+          <div class="confidential-seal">Confidencial · Uso Executivo</div>
+        </div>
+
+        <div class="cover-center">
+          <p class="cover-kicker">Progress Report Premium</p>
+          <h1>Relatório Executivo de Progresso Estratégico</h1>
+          <p class="cover-subtitle">Análise dos vídeos, construção de posicionamento e plano de crescimento digital.</p>
+
+          <div class="cover-client" aria-label="Metadados do relatório">
+            <div class="cover-meta">
+              <span>Cliente</span>
+              <strong>Professora Samar Ferraz<br>Estratégia de marca pessoal</strong>
+            </div>
+            <div class="cover-meta">
+              <span>Território</span>
+              <strong>Inglês personalizado<br>Cultura, pronúncia, listening e vida real</strong>
+            </div>
+            <div class="cover-meta">
+              <span>Projeto</span>
+              <strong>Marca, conteúdo<br>e crescimento digital</strong>
+            </div>
+            <div class="cover-meta">
+              <span>Status</span>
+              <strong>Estratégia construída<br>Validações pendentes</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="cover-bottom">
+          <p class="doc-code">Relatório executivo de progresso · Estratégia, conteúdo, funil e crescimento digital</p>
+          <p class="doc-code">ArquiteturaB2B · Diagnóstico · Posicionamento · Growth</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÍNDICE EXECUTIVO -->
+    <section class="section" aria-label="Índice executivo">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Índice Executivo</p>
+            <h2>Fundação estratégica criada</h2>
+          </div>
+          <p class="lead">Esta etapa consolidou a base de posicionamento, comunicação, experiência e crescimento digital da Professora Samar Ferraz. O foco agora é validar evidências, ajustar a oferta e transformar a estrutura em execução consistente.</p>
+        </div>
+
+        <div class="score-layout">
+          <aside class="score-panel">
+            <p class="score-label">Resultado da etapa</p>
+            <div class="score-disc" aria-label="Fundação estratégica criada">
+              <div>
+                <strong>OK</strong>
+                <span>Base criada</span>
+              </div>
+            </div>
+            <div class="score-meta-grid">
+              <div class="score-meta-item">
+                <span>Status</span>
+                <strong>Estratégia construída</strong>
+              </div>
+              <div class="score-meta-item">
+                <span>Validações</span>
+                <strong>Pendentes</strong>
+              </div>
+              <div class="score-meta-item">
+                <span>Próxima etapa</span>
+                <strong>Revisão e ativação</strong>
+              </div>
+            </div>
+          </aside>
+
+          <article class="executive-card">
+            <p class="statement">A Samar deve sair da categoria genérica de “professora de inglês” e ocupar um território de <em>inglês personalizado, humano, técnico e conectado à vida real</em>.</p>
+            <p class="lead">Os conteúdos analisados mostram uma marca com potencial de autoridade por unir método, escuta, cultura, pronúncia, listening e aplicação prática. A estrutura criada organiza esse potencial em marca, copy, UX/UI, SEO, funil e métricas.</p>
+
+            <div class="executive-grid">
+              <div class="executive-item">
+                <small>Vídeos / trechos analisados</small>
+                <strong>11 temas principais extraídos.</strong>
+              </div>
+              <div class="executive-item">
+                <small>Documentos estruturados</small>
+                <strong>4 entregáveis estratégicos.</strong>
+              </div>
+              <div class="executive-item">
+                <small>Canais planejados</small>
+                <strong>Instagram, YouTube, Blog, Site e E-mail.</strong>
+              </div>
+              <div class="executive-item">
+                <small>Funil criado</small>
+                <strong>TOFU, MOFU e BOFU.</strong>
+              </div>
+            </div>
+
+            <div class="note-box">
+              <strong>Nota metodológica:</strong> este relatório apresenta progresso estratégico e organização de ativos. Ele não substitui validação com dados internos, resultados de campanha, métricas históricas ou comprovações formais de oferta, certificações e números públicos.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATIVOS CRIADOS -->
+    <section class="section kraft" aria-label="Ativos criados">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Ativos Criados</p>
+            <h2>Base estratégica pronta para validação</h2>
+          </div>
+          <p class="lead">Os ativos abaixo organizam a marca da Samar para sair de conteúdo isolado e operar como ecossistema: posicionamento, comunicação, experiência, aquisição, nutrição e conversão.</p>
+        </div>
+
+        <div class="card-grid grid-3">
+          <article class="card">
+            <span class="card-number">01</span>
+            <h3>Fundamentos da Marca</h3>
+            <p>Posicionamento, promessa, tom de voz, território de diferenciação e pilares de autoridade.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">02</span>
+            <h3>Matriz de Copy e Conversão</h3>
+            <p>Headlines, CTAs, argumentos, objeções, FAQ, mensagens de oferta e condução por etapa do funil.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">03</span>
+            <h3>Arquitetura UX/UI & Direção Visual</h3>
+            <p>Estrutura de páginas, hierarquia de conteúdo e direção visual para uma presença mais clara e confiável.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">04</span>
+            <h3>Brand & Growth Playbook</h3>
+            <p>Sistema de crescimento com canais, conteúdo, SEO, funil, automação e métricas de acompanhamento.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">05</span>
+            <h3>Pilares editoriais</h3>
+            <p>Temas de conteúdo organizados por autoridade, vida real, pronúncia, listening, cultura, método e oferta.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">06</span>
+            <h3>Mapa de SEO</h3>
+            <p>Clusters planejados para pronúncia, listening, inglês com música, viagem, cultura e método personalizado.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">07</span>
+            <h3>CTAs por etapa do funil</h3>
+            <p>Chamadas de ação separadas para descoberta, consideração e decisão, evitando comunicação genérica.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">08</span>
+            <h3>Roteiros de vídeos curtos</h3>
+            <p>Ideias de Reels e Shorts derivadas dos conteúdos já analisados, com gancho, desenvolvimento e CTA.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">09</span>
+            <h3>Jornada de automação</h3>
+            <p>Fluxo planejado para captura, nutrição, prova de valor e condução para a aula experimental.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">10</span>
+            <h3>Lead scoring</h3>
+            <p>Critérios de qualificação para diferenciar curiosidade, intenção de aprendizado e prontidão para compra.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VÍDEOS ANALISADOS -->
+    <section class="section" aria-label="Vídeos analisados">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Vídeos Analisados</p>
+            <h2>Temas estratégicos já extraídos</h2>
+          </div>
+          <p class="lead">Os vídeos e trechos analisados revelam uma combinação forte entre ensino prático, cultura, pronúncia e situações reais. Esses temas formam a matéria-prima do posicionamento e do calendário editorial.</p>
+        </div>
+
+        <div class="card-grid grid-3">
+          <article class="card"><span class="card-number">01</span><h3>Inglês com podcasts e audiobooks</h3><p>Conteúdo com potencial para educação, hábito de estudo e evolução fora da aula.</p></article>
+          <article class="card"><span class="card-number">02</span><h3>Listening com noticiário</h3><p>Abordagem prática para melhorar escuta com assuntos reais e vocabulário contextual.</p></article>
+          <article class="card"><span class="card-number">03</span><h3>Pronúncia de Wikipedia</h3><p>Tema curto, curioso e útil para gerar retenção, compartilhamento e autoridade em pronúncia.</p></article>
+          <article class="card"><span class="card-number">04</span><h3>Pronúncia de YouTube</h3><p>Conteúdo de alta familiaridade que conecta erro comum, correção e aplicação imediata.</p></article>
+          <article class="card"><span class="card-number">05</span><h3>Pronúncia de WhatsApp</h3><p>Exemplo cotidiano com potencial de identificação e quebra de insegurança.</p></article>
+          <article class="card"><span class="card-number">06</span><h3>Nomes estrangeiros no Brasil</h3><p>Território de cultura, comunicação real e sensibilidade com sotaques e referências globais.</p></article>
+          <article class="card"><span class="card-number">07</span><h3>Outlet, mall e shopping</h3><p>Diferenças culturais e linguísticas que ajudam o aluno a entender inglês em contexto.</p></article>
+          <article class="card"><span class="card-number">08</span><h3>Autoridade profissional da Samar</h3><p>Base para reforçar experiência, método e credibilidade sem depender de autopromoção excessiva.</p></article>
+          <article class="card"><span class="card-number">09</span><h3>Método personalizado</h3><p>Diferenciação central: aula adaptada à vida, objetivo, rotina e nível real do aluno.</p></article>
+          <article class="card"><span class="card-number">10</span><h3>Aula experimental de R$1</h3><p>Oferta de entrada que precisa ser comunicada com clareza, confiança e limite estratégico.</p></article>
+          <article class="card"><span class="card-number">11</span><h3>Inglês com música</h3><p>Conteúdo de alto apelo emocional para vocabulário, listening, cultura e retenção.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAGNÓSTICO ESTRATÉGICO -->
+    <section class="section dark" aria-label="Diagnóstico estratégico">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Diagnóstico Estratégico</p>
+            <h2>O posicionamento não deve ser genérico</h2>
+          </div>
+          <p class="lead">A leitura estratégica é simples: a Samar não deve ser posicionada apenas como “professora de inglês”. Esse enquadramento reduz diferenciação, comprime valor e deixa a comunicação vulnerável à comparação por preço.</p>
+        </div>
+
+        <div class="card-grid grid-2">
+          <article class="card dark-card">
+            <span class="pill">Posicionamento recomendado</span>
+            <h3>Especialista em inglês personalizado</h3>
+            <ul class="clean-list">
+              <li><span class="list-marker">1</span><span>Método humano, técnico e adaptado à realidade do aluno.</span></li>
+              <li><span class="list-marker">2</span><span>Conexão entre pronúncia, listening, cultura e vida real.</span></li>
+              <li><span class="list-marker">3</span><span>Autoridade construída por explicações simples, exemplos cotidianos e direção clara.</span></li>
+            </ul>
+          </article>
+
+          <article class="card dark-card">
+            <span class="pill">Território de marca</span>
+            <h3>Inglês para uso real, não apenas para aula</h3>
+            <ul class="clean-list">
+              <li><span class="list-marker">1</span><span>Conteúdo que resolve dúvidas reais e melhora a segurança do aluno.</span></li>
+              <li><span class="list-marker">2</span><span>Abordagem com cultura, escuta, sotaque, vocabulário e situações do dia a dia.</span></li>
+              <li><span class="list-marker">3</span><span>Oferta de entrada conectada à aula experimental e à jornada de confiança.</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="note-box" style="margin-top: 34px;">
+          <strong>Formulação central sugerida:</strong> Professora especialista em inglês personalizado, com método humano, técnico e conectado à vida real do aluno.
+        </div>
+      </div>
+    </section>
+
+    <!-- PILARES DO PROJETO -->
+    <section class="section kraft" aria-label="Pilares do projeto">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Pilares do Projeto</p>
+            <h2>Estado atual da construção estratégica</h2>
+          </div>
+          <p class="lead">A matriz abaixo organiza o que já foi definido, estruturado ou planejado. As pendências permanecem explícitas para evitar decisões baseadas em suposição.</p>
+        </div>
+
+        <div class="pillar-grid">
+          <article class="pillar-card">
+            <div class="pillar-top"><p class="pillar-title">Posicionamento</p><div class="pillar-score">OK</div></div>
+            <div class="bar ok"><span style="width:100%"></span></div>
+            <div class="pillar-meta"><span class="status-chip">Status: Definido</span><span class="status-chip priority">Base estratégica</span></div>
+            <p class="micro">Território recomendado: inglês personalizado, cultura, pronúncia, listening e vida real.</p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-top"><p class="pillar-title">Copy</p><div class="pillar-score">OK</div></div>
+            <div class="bar ok"><span style="width:92%"></span></div>
+            <div class="pillar-meta"><span class="status-chip">Status: Estruturada</span><span class="status-chip priority">Conversão</span></div>
+            <p class="micro">Headlines, CTAs, e-mails, FAQ, argumentos e mensagens por etapa do funil.</p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-top"><p class="pillar-title">UX/UI</p><div class="pillar-score">OK</div></div>
+            <div class="bar ok"><span style="width:88%"></span></div>
+            <div class="pillar-meta"><span class="status-chip">Status: Direcionado</span><span class="status-chip priority">Experiência</span></div>
+            <p class="micro">Home, Sobre, Método, Aula Experimental e Blog organizados como estrutura inicial.</p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-top"><p class="pillar-title">Conteúdo</p><div class="pillar-score">OK</div></div>
+            <div class="bar petrol"><span style="width:84%"></span></div>
+            <div class="pillar-meta"><span class="status-chip">Status: Pilares extraídos</span><span class="status-chip priority">Editorial</span></div>
+            <p class="micro">Temas derivados dos vídeos analisados, com potencial para Reels, Shorts, Blog e e-mail.</p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-top"><p class="pillar-title">Funil</p><div class="pillar-score">OK</div></div>
+            <div class="bar petrol"><span style="width:78%"></span></div>
+            <div class="pillar-meta"><span class="status-chip">Status: Desenhado</span><span class="status-chip priority">TOFU · MOFU · BOFU</span></div>
+            <p class="micro">Jornada planejada da descoberta até a aula experimental, com CTAs por maturidade.</p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-top"><p class="pillar-title">SEO</p><div class="pillar-score">OK</div></div>
+            <div class="bar warning"><span style="width:74%"></span></div>
+            <div class="pillar-meta"><span class="status-chip">Status: Planejado</span><span class="status-chip priority">Aquisição</span></div>
+            <p class="micro">Clusters de pronúncia, listening, música, viagem, cultura e método personalizado.</p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-top"><p class="pillar-title">Métricas</p><div class="pillar-score">OK</div></div>
+            <div class="bar petrol"><span style="width:80%"></span></div>
+            <div class="pillar-meta"><span class="status-chip">Status: Definidas</span><span class="status-chip priority">Acompanhamento</span></div>
+            <p class="micro">Reels, Shorts, Blog, Site, Hotmart, e-mail e conversão organizados como pontos de leitura.</p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-top"><p class="pillar-title">Pendências</p><div class="pillar-score">P</div></div>
+            <div class="bar warning"><span style="width:35%"></span></div>
+            <div class="pillar-meta"><span class="status-chip">Status: Validação pendente</span><span class="status-chip priority">Governança</span></div>
+            <p class="micro">Certificados, números públicos, oferta, condições comerciais e dados internos precisam ser confirmados antes da publicação final.</p>
+          </article>
+        </div>
+
+        <div class="note-box">
+          <strong>Observação:</strong> as barras representam leitura qualitativa de maturidade estratégica da ArquiteturaB2B. Não são métricas oficiais de plataforma externa.
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPLEMENTAÇÃO -->
+    <section class="section" aria-label="Implementação">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Implementação</p>
+            <h2>Matriz de frentes estruturadas</h2>
+          </div>
+          <p class="lead">Esta matriz mostra o que já foi feito em cada frente. O objetivo é preservar clareza, evitar retrabalho e orientar a próxima etapa sem depender de improviso.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Frente</th>
+                <th>Status</th>
+                <th>O que foi feito</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Vídeos</strong><span class="sub">Conteúdo-base</span></td>
+                <td><span class="validated">Em análise contínua</span></td>
+                <td>11 temas estratégicos já extraídos.</td>
+              </tr>
+              <tr>
+                <td><strong>Marca</strong><span class="sub">Fundação estratégica</span></td>
+                <td><span class="validated">Estruturada</span></td>
+                <td>Posicionamento, tom de voz, promessa e pilares.</td>
+              </tr>
+              <tr>
+                <td><strong>Copy</strong><span class="sub">Conversão</span></td>
+                <td><span class="validated">Estruturada</span></td>
+                <td>Headlines, CTAs, e-mails, FAQ e argumentos.</td>
+              </tr>
+              <tr>
+                <td><strong>UX/UI</strong><span class="sub">Experiência digital</span></td>
+                <td><span class="validated">Estruturada</span></td>
+                <td>Home, Sobre, Método, Aula Experimental e Blog.</td>
+              </tr>
+              <tr>
+                <td><strong>SEO</strong><span class="sub">Aquisição orgânica</span></td>
+                <td><span class="not-validated">Planejado</span></td>
+                <td>Clusters de pronúncia, listening, música, viagem e método.</td>
+              </tr>
+              <tr>
+                <td><strong>Funil</strong><span class="sub">Jornada de decisão</span></td>
+                <td><span class="not-validated">Planejado</span></td>
+                <td>TOFU, MOFU, BOFU e aula experimental.</td>
+              </tr>
+              <tr>
+                <td><strong>Métricas</strong><span class="sub">Leitura de performance</span></td>
+                <td><span class="validated">Definidas</span></td>
+                <td>Reels, Shorts, Blog, Site, Hotmart e conversão.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CANAIS E FUNIL -->
+    <section class="section dark compact" aria-label="Canais e funil">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Canais e Funil</p>
+            <h2>Ecossistema planejado para crescimento digital</h2>
+          </div>
+          <p class="lead">A estratégia conecta canais de descoberta, aprofundamento e decisão para que cada conteúdo tenha função dentro da jornada do aluno.</p>
+        </div>
+
+        <div class="activation-grid">
+          <div class="signal-row">
+            <span class="signal-name">Instagram: prova social, bastidores e Reels educativos</span>
+            <div class="signal-track"><div class="signal-fill" style="width:82%; background: var(--ok);"></div></div>
+            <span class="signal-pct">Planejado</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-name">YouTube: Shorts, autoridade e conteúdos explicativos</span>
+            <div class="signal-track"><div class="signal-fill" style="width:78%; background: var(--ok);"></div></div>
+            <span class="signal-pct">Planejado</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-name">Blog: SEO para pronúncia, listening, música e cultura</span>
+            <div class="signal-track"><div class="signal-fill" style="width:74%; background: var(--bronze);"></div></div>
+            <span class="signal-pct">Planejado</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-name">Site: Home, Sobre, Método e Aula Experimental</span>
+            <div class="signal-track"><div class="signal-fill" style="width:80%; background: var(--petrol);"></div></div>
+            <span class="signal-pct">Estruturado</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-name">E-mail: nutrição, confiança e chamada para decisão</span>
+            <div class="signal-track"><div class="signal-fill" style="width:68%; background: var(--warning);"></div></div>
+            <span class="signal-pct">Planejado</span>
+          </div>
+        </div>
+
+        <div class="note-box" style="margin-top: 34px;">
+          <strong>Funil criado:</strong> TOFU para descoberta e educação; MOFU para aprofundamento, método e prova de valor; BOFU para aula experimental, objeções e decisão.
+        </div>
+      </div>
+    </section>
+
+    <!-- PENDÊNCIAS E METODOLOGIA -->
+    <section class="section" aria-label="Metodologia e pendências">
+      <div class="container">
+        <div class="method-box">
+          <div>
+            <p class="eyebrow">Governança</p>
+            <h2>Pendências antes da ativação pública</h2>
+            <p class="lead">O projeto já possui base estratégica, mas algumas informações devem ser validadas antes de entrarem em site, páginas de venda, anúncios ou comunicação institucional.</p>
+          </div>
+
+          <ul class="method-list">
+            <li><strong>Certificados e formação:</strong> validar quais credenciais podem ser usadas publicamente.</li>
+            <li><strong>Números e provas:</strong> confirmar anos de experiência, volume de alunos, resultados, depoimentos e qualquer dado quantitativo.</li>
+            <li><strong>Oferta:</strong> confirmar regras da aula experimental de R$1, canais de pagamento, disponibilidade e limitações.</li>
+            <li><strong>Dados internos:</strong> revisar métricas históricas de redes sociais, site, Hotmart, e-mail e conversão, quando disponíveis.</li>
+            <li><strong>Compromisso ético:</strong> evitar promessas de fluência, resultados garantidos ou afirmações que não possam ser sustentadas.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FECHAMENTO -->
+    <section class="closing" aria-label="Próximo passo">
+      <div class="container">
+        <p class="eyebrow">Próximo passo recomendado</p>
+        <h2>Validar a base e transformar a estratégia em presença digital consistente.</h2>
+        <p class="lead">A estrutura já foi criada. Agora a prioridade é confirmar dados sensíveis, ajustar a oferta, selecionar os ativos que entram primeiro em produção e iniciar a publicação com coerência editorial.</p>
+
+        <div class="closing-actions">
+          <div class="closing-action">
+            <span>1</span>
+            <p><strong>Validar posicionamento e promessa:</strong> confirmar se o território de inglês personalizado reflete com precisão a entrega da Samar.</p>
+          </div>
+          <div class="closing-action">
+            <span>2</span>
+            <p><strong>Confirmar oferta e provas:</strong> revisar certificados, números, aula experimental, depoimentos e dados que podem aparecer publicamente.</p>
+          </div>
+          <div class="closing-action">
+            <span>3</span>
+            <p><strong>Ativar os primeiros canais:</strong> organizar site, Instagram, YouTube, Blog e e-mail com a mesma narrativa estratégica.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span><strong>ArquiteturaB2B</strong> · Clareza antes da execução.</span>
+        <span>Professora Samar Ferraz · Relatório Executivo de Progresso Estratégico · Confidencial</span>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>
